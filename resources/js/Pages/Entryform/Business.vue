@@ -8,16 +8,25 @@
                 </Autocomplete>
                 <label for="name">Name</label>
             </IftaLabel>
+            <div v-if="errors.name">
+                <InputError>{{ errors.name }}</InputError>
+            </div>
             <IftaLabel>
                 <Autocomplete v-model="form.building" :information="buildings" :errors="props.errors.building"
                     id="building_name"></Autocomplete>
                 <label for="building_name">Building Name</label>
             </IftaLabel>
+            <div v-if="errors.building">
+                <InputError>{{ errors.building }}</InputError>
+            </div>
             <IftaLabel>
                 <Autocomplete v-model="form.category" :information="categories" :errors="props.errors.category"
                     id="category_type"></Autocomplete>
                 <label for="category_type">Category Type</label>
             </IftaLabel>
+            <div v-if="errors.category">
+                <InputError>{{ errors.category }}</InputError>
+            </div>
             <IftaLabel>
                 <InputText type="text" v-model="form.location" id="location"></InputText>
                 <label for="location">Location</label>

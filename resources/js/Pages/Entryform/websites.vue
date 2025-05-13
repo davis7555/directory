@@ -15,18 +15,27 @@
                 </Autocomplete>
                 <label for="url">URL</label>
             </IftaLabel>
+            <div v-if="errors.url">
+                <InputError>{{ errors.url }}</InputError>
+            </div>
             <IftaLabel>
                 <Autocomplete v-model="form.business" :information="business" :errors="props.errors.business"
                     id="business_name">
                 </Autocomplete>
                 <label for="business_name">Business Name</label>
             </IftaLabel>
+            <div v-if="errors.business">
+                <InputError>{{ errors.business }}</InputError>
+            </div>
             <IftaLabel>
                 <Autocomplete v-model="form.category" :information="categories" :errors="props.errors.category"
                     id="type">
                 </Autocomplete>
                 <label for="type">Category Type</label>
             </IftaLabel>
+            <div v-if="errors.category">
+                <InputError>{{ errors.category }}</InputError>
+            </div>
             <div class="flex justify-center pb-2 gap-4">
                 <SubmitButton :disabled="form.processing" @click="method = 'post'">ADD WEBSITE</SubmitButton>
                 <UpdateButton :disabled="form.processing" @click="method = 'put'">UPDATE WEBSITE</UpdateButton>

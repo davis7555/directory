@@ -7,6 +7,9 @@
                 <Autocomplete :information="elements" :errors="props.errors.name" v-model="form.name" id="name" />
                 <label for="name">Name</label>
             </IftaLabel>
+            <div v-if="errors.name">
+                <InputError>{{ errors.name }}</InputError>
+            </div>
             <IftaLabel>
                 <InputText type="text" v-model="form.location" id="location" />
                 <label for="location">Location</label>

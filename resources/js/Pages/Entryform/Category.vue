@@ -7,12 +7,17 @@
                 <Autocomplete :information="elements" :errors="props.errors.type" v-model="form.type" id="type" />
                 <label for="type">Type</label>
             </IftaLabel>
+            <div v-if="errors.type">
+                <InputError>{{ errors.type }}</InputError>
+            </div>
             <IftaLabel>
                 <Textarea v-model="form.description" :rows="10" :cols="85" id="description">
                 </Textarea>
                 <label for="description">description</label>
             </IftaLabel>
-            <div v-if="errors.description"></div>
+            <div v-if="errors.description">
+                <InputError>{{ errors.description }}</InputError>
+            </div>
             <div class="flex justify-center pb-2 gap-6">
                 <SubmitButton :disabled="form.processing" @click="method = 'post'">ADD CATEGORY
                 </SubmitButton>
@@ -35,6 +40,8 @@ import UpdateButton from '@/Components/UpdateButton.vue';
 import Autocomplete from '@/Components/Autocomplete.vue';
 
 import Textarea from 'primevue/textarea';
+
+import InputError from './InputError.vue';
 
 import Menu from '@/Layouts/Menu.vue';
 
