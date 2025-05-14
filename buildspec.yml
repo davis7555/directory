@@ -13,8 +13,8 @@ phases:
   pre_build:
     commands:
       - composer install
-      # - npm install
-      # - npm run build
+      - npm install
+      - npm run build
 artifacts:
   files:
     - "**/*"
