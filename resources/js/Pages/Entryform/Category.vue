@@ -41,7 +41,7 @@ import Autocomplete from '@/Components/Autocomplete.vue';
 
 import Textarea from 'primevue/textarea';
 
-import InputError from './InputError.vue';
+import InputError from '@/Components/InputError.vue';
 
 import Menu from '@/Layouts/Menu.vue';
 
