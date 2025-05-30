@@ -25,6 +25,10 @@ const items = ref([
         label: 'Building',
         url: '/building',
     },
+    {
+        label: 'View Buildings',
+        url: '/view-buildings',
+    },
 ]);
 
 </script>

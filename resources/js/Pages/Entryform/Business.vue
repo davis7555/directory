@@ -7,54 +7,54 @@
                 <Autocomplete v-model="form.name" :information="elements" :errors="props.errors.name" id="name">
                 </Autocomplete>
                 <label for="name">Name</label>
+                <div v-if="errors.name">
+                    <InputError>{{ errors.name }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.name">
-                <InputError>{{ errors.name }}</InputError>
-            </div>
             <IftaLabel>
                 <Autocomplete v-model="form.building" :information="buildings" :errors="props.errors.building"
                     id="building_name"></Autocomplete>
                 <label for="building_name">Building Name</label>
+                <div v-if="errors.building">
+                    <InputError>{{ errors.building }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.building">
-                <InputError>{{ errors.building }}</InputError>
-            </div>
             <IftaLabel>
                 <Autocomplete v-model="form.category" :information="categories" :errors="props.errors.category"
                     id="category_type"></Autocomplete>
                 <label for="category_type">Category Type</label>
+                <div v-if="errors.category">
+                    <InputError>{{ errors.category }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.category">
-                <InputError>{{ errors.category }}</InputError>
-            </div>
             <IftaLabel>
                 <InputText type="text" v-model="form.location" id="location"></InputText>
                 <label for="location">Location</label>
+                <div v-if="errors.location">
+                    <InputError>{{ errors.location }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.location">
-                <InputError>{{ errors.location }}</InputError>
-            </div>
             <IftaLabel>
                 <InputText type="text" v-model="form.email" id="email"></InputText>
                 <label for="email">Email</label>
+                <div v-if="errors.email">
+                    <InputError>{{ errors.email }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.email">
-                <InputError>{{ errors.email }}</InputError>
-            </div>
             <IftaLabel>
                 <InputText type="text" v-model="form.icon" inputId="icon"></InputText>
                 <label for="icon">Icon</label>
+                <div v-if="errors.icon">
+                    <InputError>{{ errors.icon }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.icon">
-                <InputError>{{ errors.icon }}</InputError>
-            </div>
             <IftaLabel>
                 <InputText type="text" v-model="form.phone" inputId="phone"></InputText>
                 <label for="phone">Phone Number</label>
+                <div v-if="errors.phone">
+                    <InputError>{{ errors.phone }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.phone">
-                <InputError>{{ errors.phone }}</InputError>
-            </div>
             <div class="flex justify-center pb-2 gap-4">
                 <SubmitButton :disabled="form.processing" @click="method = 'post'">ADD BUSINESS</SubmitButton>
                 <UpdateButton :disabled="form.processing" @click="method = 'put'">UPDATE BUSINESS</UpdateButton>
@@ -69,7 +69,7 @@ import { useForm } from '@inertiajs/vue3';
 
 import IftaLabel from 'primevue/iftalabel';
 
-import InputError from '@/Components/InputError.vue';
+import InputError from '@/Components/ErrorMessage.vue';
 
 import SubmitButton from '@/Components/SubmitButton.vue';
 

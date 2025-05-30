@@ -31,7 +31,7 @@ class InputBusinesses extends Controller
             'building' => 'required|exists:buildings,name',
             'location' => 'max:255',
             'icon' => 'max:255',
-            'email' => 'email|max:255',
+            'email' => 'max:255',
             'phone' => 'regex:/^[0-9]{10}$/',
             'category' => 'required|exists:categories,type',
         ]);

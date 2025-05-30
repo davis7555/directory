@@ -6,17 +6,17 @@
             <IftaLabel>
                 <Autocomplete :information="elements" :errors="props.errors.name" v-model="form.name" id="name" />
                 <label for="name">Name</label>
+                <div v-if="errors.name">
+                    <InputError>{{ errors.name }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.name">
-                <InputError>{{ errors.name }}</InputError>
-            </div>
             <IftaLabel>
                 <InputText type="text" v-model="form.location" id="location" />
                 <label for="location">Location</label>
+                <div v-if="errors.location">
+                    <InputError>{{ errors.location }}</InputError>
+                </div>
             </IftaLabel>
-            <div v-if="errors.location">
-                <InputError>{{ errors.location }}</InputError>
-            </div>
             <div class="flex justify-center pb-2 gap-4">
                 <SubmitButton :disabled="form.processing" @click="method = 'post'">ADD BUILDING</SubmitButton>
                 <UpdateButton :disabled="form.processing" @click="method = 'put'">UPDATE BUILDING</UpdateButton>
@@ -37,7 +37,7 @@ import UpdateButton from '@/Components/UpdateButton.vue';
 
 import InputText from 'primevue/inputtext';
 
-import InputError from '@/Components/InputError.vue';
+import InputError from '@/Components/ErrorMessage.vue';
 
 import Autocomplete from '@/Components/Autocomplete.vue';
 
